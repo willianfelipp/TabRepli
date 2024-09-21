@@ -1,0 +1,78 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% { background: linear-gradient(135deg, #f5f7fa, #c3cfe2); }
+  100% { background: linear-gradient(135deg, #c3cfe2, #f5f7fa); }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8); /* Transparente fosco */
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+}
+
+form {
+  display: flex; /* Mudado para flex para alinhar os elementos */
+  flex-direction: column; /* Coloca os elementos em coluna */
+  align-items: center; /* Alinha o conteúdo ao centro */
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #4a90e2; /* Cor fixa */
+  padding: 10px;
+  font-size: 16px;
+  width: 50px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px; /* Espaço entre input e botão */
+  max-width: 90%; /* Limita a largura da caixa de texto */
+  white-space: pre-wrap; /* Permite quebras de linha */
+  overflow-wrap: break-word; /* Quebra palavras longas */
+}
+
+input:focus {
+  outline: none;
+  border-color: #e67e22; /* Cor de foco fixa */
+}
+
+button {
+  background-color: #4a90e2; /* Cor fixa */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e7c9a; /* Cor ao passar o mouse */
+}
+
+.message {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  max-width: 90%; /* Limita a largura da mensagem */
+  white-space: pre-wrap; /* Permite quebras de linha */
+  overflow-wrap: break-word; /* Quebra palavras longas */
+}
+
+.message.show {
+  opacity: 1;
+}
